@@ -1,4 +1,4 @@
-# PlayApp - Dashboard
+# PlayApp - Aplicativo Movil
 
 Archivos para la aplicación PlayApp - Ionic.
 
