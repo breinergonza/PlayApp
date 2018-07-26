@@ -1,0 +1,8 @@
+{
+  "name": "PlayApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "1ea7a4cb"
+}
