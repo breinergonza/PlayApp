@@ -1,0 +1,11 @@
+<label for="tarjeta">Tarjeta</label>
+
+<select (ngModelChange)="cambioValor($event)" name="tarjeta" [(ngModel)]="tarjeta" aria-describedby="tipoHelp" aria-placeholder="Tipos de respuesta" class="custom-select" id="tarjeta">
+  <option value="" selected>
+    <small>Seleccione ...</small>
+  </option>
+  <option *ngFor="let tar of tarjetas" [value]="tar._id">{{tar.titulo}}</option>
+</select>
+<small id="tipoHelp" class="form-text text-muted">
+  Seleccione la tarjeta
+</small>

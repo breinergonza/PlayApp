@@ -1,0 +1,38 @@
+<app-nav>
+</app-nav>
+
+<form #dominioForm="ngForm" (ngSubmit)="editarDominio()" class="animated fadeIn">
+
+    <div class="container">
+        <h3>Dominio
+            <small>{{model.nombre | titlecase }}</small>
+        </h3>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-4 ">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" [(ngModel)]="model.nombre" required class="form-control" aria-describedby="nombreHelp" placeholder="Ingrese nombre">
+                    <small id="nombreHelp" class="form-text text-muted">¿Como se llama el dominio?</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 ">
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" name="descripcion" [(ngModel)]="model.descripcion" required class="form-control" id="descripcion" aria-describedby="descripcionHelp" placeholder="Ingrese Descripción">
+                    <small id="descripcionHelp" class="form-text text-muted">Describe el objetivo del dominio</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="form-group">
+                    <button type="submit" [disabled]="!dominioForm.dirty" class="btn btn-outline-primary ">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

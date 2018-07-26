@@ -1,0 +1,55 @@
+<!-- <form #tarjetaForm="ngForm" (ngSubmit)="crearTarjeta(tarjetaForm)"> -->
+
+<app-nav>
+</app-nav>
+
+<div class="container animated fadeIn">
+    <h3>Tarjetas
+        <div class="form-check form-check-inline">
+            <input ngModel #tipoAuxA (change)=" cambioTipo(tipoAuxA.value)" class="form-check-input" type="radio" name="tipo" id="inlineRadio1" value="b">
+            <label class="form-check-label" for="inlineRadio1">Basica</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input ngModel #tipoAuxB (change)=" cambioTipo(tipoAuxB.value)" class="form-check-input" type="radio" name="tipo" id="inlineRadio2" value="v">
+            <label class="form-check-label" for="inlineRadio2">Video</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input ngModel #tipoAuxC (change)=" cambioTipo(tipoAuxC.value)" class="form-check-input" type="radio" name="tipo" id="inlineRadio3" value="a">
+            <label class="form-check-label" for="inlineRadio3">Audio</label>
+        </div>
+    </h3>
+    <hr>
+    <!-- <div class="row">
+    <div class="col-12 col-md-4 ">
+      <div class="form-group">
+        <label for="tipo">Tipo de tarjeta</label>
+        <select required ngModel #tipoAux (change)=" cambioTipo(tipoAux.value)" class="form-control" name="tipo" id="tipo">
+          <option value="">Seleccione ...</option>
+          <option value="b">Básica</option>
+          <option value="v">Vídeo</option>
+          <option value="a">Audio</option>
+        </select>
+      </div>
+    </div>
+  </div> -->
+
+    <div class="row">
+        <div class="col-12">
+
+            <div [ngSwitch]="tipo">
+                <div *ngSwitchCase="'b'" class="">
+                    <app-tarjeta-basica> </app-tarjeta-basica>
+                </div>
+                <div *ngSwitchCase="'v'">
+                    <app-tarjetas-video></app-tarjetas-video>
+                </div>
+                <div *ngSwitchCase="'a'">
+                    <app-tarjetas-audio></app-tarjetas-audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- </form> -->

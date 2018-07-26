@@ -1,0 +1,83 @@
+<app-nav>
+</app-nav>
+
+<form #usuarioForm="ngForm" (ngSubmit)="registarUsuario()" class="animated fadeIn">
+
+    <div class="container">
+        <h3>Usuario
+            <small>{{model.nombre | titlecase }}</small>
+        </h3>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-4 ">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" [(ngModel)]="model.nombre" required class="form-control" aria-describedby="nombreHelp" placeholder="Ingrese nombre">
+                    <small id="nombreHelp" class="form-text text-muted">¿Como te llamas?</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 ">
+                <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" [(ngModel)]="model.usuario" required class="form-control" id="usuario" aria-describedby="usuarioHelp" placeholder="Ingrese usuario">
+                    <small id="usuarioHelp" class="form-text text-muted">Un usuario de facil recordación es lo recomendable</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 ">
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" name="correo" required [(ngModel)]="model.correo" class="form-control" id="correo" aria-describedby="correoHelp" placeholder="Ingrese un correo electrónico">
+                    <small id="correoHelp" class="form-text text-muted">¿En que correo te contactamos?</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 ">
+                <div class="form-group">
+                    <label for="claveDinamica">Clave Dinámica</label>
+                    <input type="text" name="claveDinamica" [(ngModel)]="model.claveDinamica" class="form-control" id="claveDinamica" aria-describedby="claveHelp" placeholder="Ingrese su contraseña">
+                    <small id="claveHelp" class="form-text text-muted">Que sea facil de recordar, pero no de robar</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-3 ">
+                <div class="form-group">
+                    <label for="sexo">Sexo</label>
+
+                    <select name="sexo" [(ngModel)]="model.sexo" aria-describedby="sexoHelp" aria-placeholder="sasas" class="custom-select" id="sexo">
+            <option value="" selected>
+              <small>Seleccione ...</small>
+            </option>
+            <option value="Masculino">Masculino</option>
+            <option value="Fenemino">Fenemino</option>
+          </select>
+
+
+                    <small id="sexoHelp" class="form-text text-muted">
+            <i class="fa fa-male"></i>
+            <i class="fa fa-female"></i>
+          </small>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-outline-primary ">Crear Usuario {{model.nombre}}</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</form>

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-12  ">
+    <div class="form-group">
+
+      <input (keyup.enter)="agregarPregunta()" type="text" name="texto" [(ngModel)]="pregunta.texto" class="form-control" aria-describedby="PreguntasnHelp"
+        placeholder="Ingrese pregunta">
+
+      <small id="PreguntasnHelp" class="form-text text-muted">
+        Ingresa las preguntas relacionadas a la intención, luego oprime la tecla
+        <strong>enter</strong> para agregar
+      </small>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-12  ">
+    <ul class="list-group">
+      <li class="list-group-item " *ngFor="let pregunta of preguntas; let i = index;">
+        <div class="row">
+          <div class="col-10">
+            {{pregunta.texto}}
+          </div>
+          <div class="col-2">
+            <i (click)="eliminarIndex(i)" class="fa fa-trash text-danger zoom fa-lg"></i>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div> -->

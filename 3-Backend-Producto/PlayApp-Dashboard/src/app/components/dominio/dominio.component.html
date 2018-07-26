@@ -1,0 +1,33 @@
+<!-- /cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json -->
+
+<app-nav>
+</app-nav>
+
+<div class="container animated fadeIn">
+    <h3>Formularios
+        <i class="zoom text-primary fa fa-plus-circle" [routerLink]="['/dominio-nuevo']" routerLinkActive="router-link-active"></i>
+    </h3>
+    <hr>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr class="text-center">
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of dominio">
+                <td>{{item.nombre}}</td>
+                <td>{{item.descripcion}}</td>
+                <td class="text-center">
+                    <i [routerLink]="['/dominio-editar/', item._id]" routerLinkActive="router-link-active" class="fa fa-edit text-primary zoom fa-lg"></i>
+                </td>
+                <td class="text-center">
+                    <i (click)="eliminarDomino(item._id,item.nombre)" class="fa fa-trash text-danger zoom fa-lg"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

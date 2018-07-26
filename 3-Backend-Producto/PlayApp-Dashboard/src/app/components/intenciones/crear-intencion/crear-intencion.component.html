@@ -1,0 +1,73 @@
+<app-nav>
+</app-nav>
+
+<form #intencionForm="ngForm" (ngSubmit)="crearIntencion()" class="animated fadeIn">
+
+    <div class="container">
+        <br>
+        <h3>Pregunta
+            <small>{{model.intencion | titlecase }}</small>
+        </h3>
+
+
+        <div class="row">
+            <div class="col-12 col-md-6 ">
+                <div class="form-group">
+                    <label for="dominio">Formulario</label>
+                    <select name="dominio" [(ngModel)]="model.dominio" aria-describedby="dominoHelp" aria-placeholder="Formulario" class="custom-select" id="sexo">
+            <option value="" selected>
+              <small>Seleccione ...</small>
+            </option>
+            <option [value]="dom.nombre" *ngFor="let dom of dominios">{{dom.nombre}}</option>
+          </select>
+                    <small id="dominoHelp" class="form-text text-muted">
+            Seleccione a que formulario pertence la pregunta a crear
+          </small>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 ">
+                <div class="form-group">
+                    <label for="intencion">Pregunta</label>
+                    <input type="text" name="intencion" [(ngModel)]="model.intencion" required class="form-control" aria-describedby="intencionHelp" placeholder="Ingrese Pregunta">
+                    <small id="intencionHelp" class="form-text text-muted">Recuerda que el nombre de la pregunta debe ser único</small>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <h4>Preguntas</h4>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <app-preguntas (preguntaOut)="agregarPregunta($event)"></app-preguntas>
+            </div>
+            <div class="col-12">
+                <ul class="list-group">
+                    <li class="list-group-item " *ngFor="let pregunta of model.preguntas; let i = index;">
+                        <div class="row">
+                            <div class="col-10">
+                                {{pregunta.texto}}
+                            </div>
+                            <div class="col-2">
+                                <i (click)="eliminarIndex(i)" class="fa fa-trash text-danger zoom fa-lg"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="form-group">
+                    <button type="button" class="btn btn-outline-primary" (click)="crearIntencion()">Crear Pregunta {{model.intencion}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<pre>
+  {{model | json}}
+</pre>

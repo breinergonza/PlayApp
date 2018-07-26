@@ -1,0 +1,33 @@
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('assets/images/bg-01.jpg');">
+        <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+            <form #loginForm="ngForm" (ngSubmit)="IniciarSesion()" class="login100-form validate-form flex-sb flex-w">
+                <span class="login100-form-title">
+                    <h2>PlayApp</h2>                                       
+                </span>
+
+                <div class="p-t-31 p-b-9">
+                    <span class="txt1">Correo</span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Username is required">
+                    <input class="input100" type="text" [(ngModel)]="model.email" name="email">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="p-t-13 p-b-9">
+                    <span class="txt1">Contraseña</span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" [(ngModel)]="model.password" name="password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-login100-form-btn m-t-17">
+                    <button type="submit" [disabled]="!loginForm.dirty" class="login100-form-btn">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>

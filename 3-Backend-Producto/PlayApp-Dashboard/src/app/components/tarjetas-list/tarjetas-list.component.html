@@ -1,0 +1,41 @@
+<!-- /cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json -->
+
+<app-nav>
+</app-nav>
+
+<div class="container animated fadeIn">
+    <h3>Tarjetas
+        <i class="zoom text-primary fa fa-plus-circle" [routerLink]="['/tarjeta-nueva']" routerLinkActive="router-link-active"></i>
+    </h3>
+
+    <hr>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr class="text-center">
+                <th>Tipo</th>
+                <th>Titulo</th>
+                <th>Subtitulo</th>
+
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let item of tarjetas">
+                <td>{{item.tipo}}</td>
+                <td>{{item.titulo}}</td>
+                <td>{{item.subtitulo}}</td>
+                <td class="text-center">
+                    <i [routerLink]="['/tarjeta/', item._id]" routerLinkActive="router-link-active" class="fa fa-edit text-primary zoom fa-lg"></i>
+                </td>
+                <td class="text-center">
+                    <i (click)="eliminarTarjeta(item._id, item.titulo)" class="fa fa-trash text-danger zoom fa-lg"></i>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,58 @@
+<div class="row" *ngIf="desahabilitarTitulo">
+    <div class="col-md-9">
+        <label for="textoAux">Enunciado o titulo de las opciones</label>
+        <input type="text" id="textoAux" name="textoAux" [(ngModel)]="textoAux" class="form-control" aria-describedby="respuestasHelp" placeholder="Titulo de las opciones...">
+        <small id="respuestasHelp" class="respuestaorm-text text-muted">
+          Ingrese el enunciado de las opciones
+        </small>
+    </div>
+    <div class="col-md-3" style="padding-top: 33px;">
+        <div class="text-right">
+            <button type="button" class="btn btn-outline-success btn-sm" (click)="agregarRespuesta(textoAux)">Agregar Enunciado</button>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="!desahabilitarTitulo">
+    <div class="col-md-10">
+        <label>Enunciado o titulo de las opciones</label>
+        <input type="text" value={{titulo}} class="form-control" aria-describedby="respuestasHelp" disabled>
+    </div>
+    <div class="col-md-2" style="padding-top: 33px;">
+        <div class="text-right">
+            <button type="button" class="btn btn-outline-danger btn-sm">Eliminar Enunciado</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <label for="opcion">Seleccione la opción</label>
+        <select name="opcion" [(ngModel)]="opcion" aria-describedby="tipoHelp" aria-placeholder="Tipos de respuesta" class="custom-select" id="opcion">
+      <option value="" selected>
+        <small>Seleccione ...</small>
+      </option>
+      <option *ngFor="let op of intenciones" [value]="op._id">{{op.intencion}}</option>
+    </select>
+        <small id="tipoHelp" class="form-text text-muted">
+      Seleccione la opción
+    </small>
+
+    </div>
+    <div class="col">
+        <label for="texto">Descripción de la opción</label>
+        <input type="text" id="texto" class="form-control" aria-describedby="textoHelp" [(ngModel)]="texto" name="texto" placeholder="Descripción">
+        <small id="textoHelp" class="form-text text-muted">
+      Digite el texto a mostrar en la opción
+    </small>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col text-right">
+        <button type="button" class="btn btn-outline-success btn-sm" (click)="agregarRespuesta(texto,opcion)">Agregar Opciones</button>
+    </div>
+</div>
