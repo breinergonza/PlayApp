@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project=".\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('.\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project=".\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props" Condition="Exists('.\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C7E3A46-B60F-4052-9A21-DC8D1A942216}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Api</RootNamespace>
+    <AssemblyName>DiBot</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1998</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CS1998</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdaptiveCards, Version=0.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AdaptiveCards.0.5.1\lib\net452\AdaptiveCards.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Chronic, Version=0.3.2.0, Culture=neutral, PublicKeyToken=3bd1f1ef638b0d3c, processorArchitecture=MSIL">
+      <HintPath>packages\Chronic.Signed.0.3.2\lib\net40\Chronic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CloudinaryDotNet, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>packages\CloudinaryDotNet.1.3.0\lib\net40\CloudinaryDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=1.22.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.DocumentDB.1.22.0\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Builder, Version=3.15.2.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bot.Builder.3.15.2.2\lib\net46\Microsoft.Bot.Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Builder.Autofac, Version=3.15.2.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bot.Builder.3.15.2.2\lib\net46\Microsoft.Bot.Builder.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Builder.Azure, Version=3.15.2.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bot.Builder.Azure.3.15.2.2\lib\net46\Microsoft.Bot.Builder.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Builder.History, Version=3.15.2.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bot.Builder.History.3.15.2.2\lib\net46\Microsoft.Bot.Builder.History.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Connector, Version=3.15.2.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bot.Connector.3.15.2.2\lib\net46\Microsoft.Bot.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>.\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.1.1.4\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.40306.1554, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.4.403061554\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=2.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.2.1.4\lib\net451\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=2.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.2.1.4\lib\net451\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.5.1.4\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>.\packages\Microsoft.Rest.ClientRuntime.2.3.2\lib\net45\Microsoft.Rest.ClientRuntime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>.\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.1\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAzure.Storage.7.2.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\CloudinaryDotNet.1.3.0\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.5.1.4\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.4\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.4\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>.\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\now-ui-kit.css" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\avatar.jpg" />
+    <Content Include="assets\img\bg1.jpg" />
+    <Content Include="assets\img\bg11.jpg" />
+    <Content Include="assets\img\bg3.jpg" />
+    <Content Include="assets\img\bg4.jpg" />
+    <Content Include="assets\img\bg5.jpg" />
+    <Content Include="assets\img\bg6.jpg" />
+    <Content Include="assets\img\bg7.jpg" />
+    <Content Include="assets\img\bg8.jpg" />
+    <Content Include="assets\img\blurred-image-1.jpg" />
+    <Content Include="assets\img\creative-tim-white-slim2.png" />
+    <Content Include="assets\img\default-avatar.png" />
+    <Content Include="assets\img\eva.jpg" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\flags\AD.png" />
+    <Content Include="assets\img\flags\AE.png" />
+    <Content Include="assets\img\flags\AG.png" />
+    <Content Include="assets\img\flags\AM.png" />
+    <Content Include="assets\img\flags\AR.png" />
+    <Content Include="assets\img\flags\AT.png" />
+    <Content Include="assets\img\flags\AU.png" />
+    <Content Include="assets\img\flags\BE.png" />
+    <Content Include="assets\img\flags\BF.png" />
+    <Content Include="assets\img\flags\BG.png" />
+    <Content Include="assets\img\flags\BO.png" />
+    <Content Include="assets\img\flags\BR.png" />
+    <Content Include="assets\img\flags\CA.png" />
+    <Content Include="assets\img\flags\CD.png" />
+    <Content Include="assets\img\flags\CG.png" />
+    <Content Include="assets\img\flags\CH.png" />
+    <Content Include="assets\img\flags\CL.png" />
+    <Content Include="assets\img\flags\CM.png" />
+    <Content Include="assets\img\flags\CN.png" />
+    <Content Include="assets\img\flags\CO.png" />
+    <Content Include="assets\img\flags\CZ.png" />
+    <Content Include="assets\img\flags\DE.png" />
+    <Content Include="assets\img\flags\DJ.png" />
+    <Content Include="assets\img\flags\DK.png" />
+    <Content Include="assets\img\flags\DZ.png" />
+    <Content Include="assets\img\flags\EE.png" />
+    <Content Include="assets\img\flags\EG.png" />
+    <Content Include="assets\img\flags\ES.png" />
+    <Content Include="assets\img\flags\FI.png" />
+    <Content Include="assets\img\flags\FR.png" />
+    <Content Include="assets\img\flags\GA.png" />
+    <Content Include="assets\img\flags\GB.png" />
+    <Content Include="assets\img\flags\GM.png" />
+    <Content Include="assets\img\flags\GT.png" />
+    <Content Include="assets\img\flags\HN.png" />
+    <Content Include="assets\img\flags\HT.png" />
+    <Content Include="assets\img\flags\HU.png" />
+    <Content Include="assets\img\flags\ID.png" />
+    <Content Include="assets\img\flags\IE.png" />
+    <Content Include="assets\img\flags\IL.png" />
+    <Content Include="assets\img\flags\IN.png" />
+    <Content Include="assets\img\flags\IQ.png" />
+    <Content Include="assets\img\flags\IR.png" />
+    <Content Include="assets\img\flags\IT.png" />
+    <Content Include="assets\img\flags\JM.png" />
+    <Content Include="assets\img\flags\JO.png" />
+    <Content Include="assets\img\flags\JP.png" />
+    <Content Include="assets\img\flags\KG.png" />
+    <Content Include="assets\img\flags\KN.png" />
+    <Content Include="assets\img\flags\KP.png" />
+    <Content Include="assets\img\flags\KR.png" />
+    <Content Include="assets\img\flags\KW.png" />
+    <Content Include="assets\img\flags\KZ.png" />
+    <Content Include="assets\img\flags\LA.png" />
+    <Content Include="assets\img\flags\LB.png" />
+    <Content Include="assets\img\flags\LC.png" />
+    <Content Include="assets\img\flags\LS.png" />
+    <Content Include="assets\img\flags\LU.png" />
+    <Content Include="assets\img\flags\LV.png" />
+    <Content Include="assets\img\flags\MG.png" />
+    <Content Include="assets\img\flags\MK.png" />
+    <Content Include="assets\img\flags\ML.png" />
+    <Content Include="assets\img\flags\MM.png" />
+    <Content Include="assets\img\flags\MT.png" />
+    <Content Include="assets\img\flags\MX.png" />
+    <Content Include="assets\img\flags\NA.png" />
+    <Content Include="assets\img\flags\NE.png" />
+    <Content Include="assets\img\flags\NG.png" />
+    <Content Include="assets\img\flags\NI.png" />
+    <Content Include="assets\img\flags\NL.png" />
+    <Content Include="assets\img\flags\NO.png" />
+    <Content Include="assets\img\flags\OM.png" />
+    <Content Include="assets\img\flags\PA.png" />
+    <Content Include="assets\img\flags\PE.png" />
+    <Content Include="assets\img\flags\PG.png" />
+    <Content Include="assets\img\flags\PK.png" />
+    <Content Include="assets\img\flags\PL.png" />
+    <Content Include="assets\img\flags\PT.png" />
+    <Content Include="assets\img\flags\PY.png" />
+    <Content Include="assets\img\flags\QA.png" />
+    <Content Include="assets\img\flags\RO.png" />
+    <Content Include="assets\img\flags\RU.png" />
+    <Content Include="assets\img\flags\RW.png" />
+    <Content Include="assets\img\flags\SA.png" />
+    <Content Include="assets\img\flags\SE.png" />
+    <Content Include="assets\img\flags\SG.png" />
+    <Content Include="assets\img\flags\SL.png" />
+    <Content Include="assets\img\flags\SN.png" />
+    <Content Include="assets\img\flags\SO.png" />
+    <Content Include="assets\img\flags\SV.png" />
+    <Content Include="assets\img\flags\TD.png" />
+    <Content Include="assets\img\flags\TJ.png" />
+    <Content Include="assets\img\flags\TL.png" />
+    <Content Include="assets\img\flags\TR.png" />
+    <Content Include="assets\img\flags\TZ.png" />
+    <Content Include="assets\img\flags\UA.png" />
+    <Content Include="assets\img\flags\US.png" />
+    <Content Include="assets\img\flags\VE.png" />
+    <Content Include="assets\img\flags\VN.png" />
+    <Content Include="assets\img\flags\YE.png" />
+    <Content Include="assets\img\header.jpg" />
+    <Content Include="assets\img\hero-image-1.png" />
+    <Content Include="assets\img\hero-image-2.png" />
+    <Content Include="assets\img\hero-image-3.png" />
+    <Content Include="assets\img\iconoChat.png" />
+    <Content Include="assets\img\invision-white-slim.png" />
+    <Content Include="assets\img\landing.jpg" />
+    <Content Include="assets\img\login.jpg" />
+    <Content Include="assets\img\logo-square.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\now-logo.png" />
+    <Content Include="assets\img\nucleo-logo.svg" />
+    <Content Include="assets\img\profile.jpg" />
+    <Content Include="assets\img\ryan.jpg" />
+    <Content Include="assets\js\core\bootstrap.min.js" />
+    <Content Include="assets\js\core\jquery.3.2.1.min.js" />
+    <Content Include="assets\js\core\popper.min.js" />
+    <Content Include="assets\js\now-ui-kit.js" />
+    <Content Include="assets\js\plugins\bootstrap-datepicker.js" />
+    <Content Include="assets\js\plugins\bootstrap-switch.js" />
+    <Content Include="assets\js\plugins\jquery.sharrre.js" />
+    <Content Include="assets\js\plugins\nouislider.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="DiBot_Icon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\fonts\nucleo-outline.eot" />
+    <Content Include="assets\fonts\nucleo-outline.ttf" />
+    <Content Include="assets\fonts\nucleo-outline.woff" />
+    <Content Include="assets\fonts\nucleo-outline.woff2" />
+    <Content Include="assets\sass\now-ui-kit.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_badges.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_buttons.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_datepicker.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_dropdown.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_inputs.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_modals.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_navbar.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_pages.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_popovers.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_transparency.scss" />
+    <Content Include="assets\sass\now-ui-kit\mixins\_vendor-prefixes.scss" />
+    <Content Include="assets\sass\now-ui-kit\plugins\_plugin-bootstrap-switch.scss" />
+    <Content Include="assets\sass\now-ui-kit\plugins\_plugin-datepicker.scss" />
+    <Content Include="assets\sass\now-ui-kit\plugins\_plugin-nouislider.scss" />
+    <Content Include="assets\sass\now-ui-kit\_alerts.scss" />
+    <Content Include="assets\sass\now-ui-kit\_badges.scss" />
+    <Content Include="assets\sass\now-ui-kit\_buttons.scss" />
+    <Content Include="assets\sass\now-ui-kit\_cards.scss" />
+    <Content Include="assets\sass\now-ui-kit\_carousel.scss" />
+    <Content Include="assets\sass\now-ui-kit\_checkboxes-radio.scss" />
+    <Content Include="assets\sass\now-ui-kit\_dropdown.scss" />
+    <Content Include="assets\sass\now-ui-kit\_example-pages.scss" />
+    <Content Include="assets\sass\now-ui-kit\_footers.scss" />
+    <Content Include="assets\sass\now-ui-kit\_images.scss" />
+    <Content Include="assets\sass\now-ui-kit\_inputs.scss" />
+    <Content Include="assets\sass\now-ui-kit\_misc.scss" />
+    <Content Include="assets\sass\now-ui-kit\_mixins.scss" />
+    <Content Include="assets\sass\now-ui-kit\_modals.scss" />
+    <Content Include="assets\sass\now-ui-kit\_navbar.scss" />
+    <Content Include="assets\sass\now-ui-kit\_nucleo-outline.scss" />
+    <Content Include="assets\sass\now-ui-kit\_pagination.scss" />
+    <Content Include="assets\sass\now-ui-kit\_pills.scss" />
+    <Content Include="assets\sass\now-ui-kit\_popups.scss" />
+    <Content Include="assets\sass\now-ui-kit\_progress.scss" />
+    <Content Include="assets\sass\now-ui-kit\_responsive.scss" />
+    <Content Include="assets\sass\now-ui-kit\_sections.scss" />
+    <Content Include="assets\sass\now-ui-kit\_social-buttons.scss" />
+    <Content Include="assets\sass\now-ui-kit\_tabs.scss" />
+    <Content Include="assets\sass\now-ui-kit\_typography.scss" />
+    <Content Include="assets\sass\now-ui-kit\_variables.scss" />
+    <None Include="Properties\PublishProfiles\dibot-segurosbeta - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\dibot-segurosbeta - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\play-app - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\play-app - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DominiosController.cs" />
+    <Compile Include="Controllers\IntencionesController.cs" />
+    <Compile Include="Controllers\InicioController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inicio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\TitulosPersonalizados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TitulosPersonalizados.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Inicio\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout-Login.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DiBot.Datos\PlayApp.Datos.csproj">
+      <Project>{13598745-c0f2-4fe3-bb19-324db85853cb}</Project>
+      <Name>PlayApp.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="DiBot.IC\PlayApp.IC.csproj">
+      <Project>{f77a9f4f-8d05-4b6f-ba74-473c0f0a654a}</Project>
+      <Name>PlayApp.IC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\TitulosPersonalizados.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TitulosPersonalizados.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\img\presentation-page\" />
+    <Folder Include="Views\Intensiones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableMSDeployAppOffline>true</EnableMSDeployAppOffline>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DiBot_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3978</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3984/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('.\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '.\packages\Microsoft.Net.Compilers.1.2.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('.\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '.\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.Azure.DocumentDB.1.22.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Azure.DocumentDB.1.22.0\build\Microsoft.Azure.DocumentDB.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="PostDeployScripts\IncludeSources.targets" Condition="Exists('PostDeployScripts\IncludeSources.targets')" />
+  <Import Project="..\PostDeployScripts\IncludeSources.targets" Condition="Exists('..\PostDeployScripts\IncludeSources.targets')" />
+  <Import Project="packages\Microsoft.Azure.DocumentDB.1.22.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('packages\Microsoft.Azure.DocumentDB.1.22.0\build\Microsoft.Azure.DocumentDB.targets')" />
+</Project>

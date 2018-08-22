@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://play-app.azurewebsites.net/api',
+  apiUrl: 'http://localhost:3978/api',
   firebase: {
     apiKey: 'AIzaSyD_I7TZMSY45OO_1BP81g63ZL83N4EosBc',
     authDomain: 'dibot-ui.firebaseapp.com',

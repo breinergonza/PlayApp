@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ClaveNoEncontrada" xml:space="preserve">
+    <value>La clave no coincide con la que se encuentra registrada en mi sistema, inténtalo nuevamente</value>
+  </data>
+  <data name="ErrorCampoRequerido" xml:space="preserve">
+    <value>El campo {0} es un campo requerido.</value>
+  </data>
+  <data name="ErrorCamposRequeridos" xml:space="preserve">
+    <value>Los campos {0} son campos requeridos.</value>
+  </data>
+  <data name="ErrorCamposUnicos" xml:space="preserve">
+    <value>Los campos {0} deben ser campos únicos.</value>
+  </data>
+  <data name="ErrorCampoUnico" xml:space="preserve">
+    <value>El valor del campo {0} ya existe.</value>
+  </data>
+  <data name="ErrorClave" xml:space="preserve">
+    <value>La clave no es valida</value>
+  </data>
+  <data name="ErrorGenerico" xml:space="preserve">
+    <value>Lo siento, tengo problemas para comprenderte. Por favor intenta reformular tu pregunta.</value>
+  </data>
+  <data name="ErrorInsertar" xml:space="preserve">
+    <value>Se presento un error al intentar insertar {0}.</value>
+  </data>
+  <data name="IntentosExcedidos" xml:space="preserve">
+    <value>Excediste el numero de intentos, te recomiendo que verifiques tus datos y vuelvas a intentarlo.</value>
+  </data>
+  <data name="IntentosExcedidosGenerico" xml:space="preserve">
+    <value>Excediste el número de intentos permitidos</value>
+  </data>
+  <data name="NoRestablecer" xml:space="preserve">
+    <value>Para iniciar sesión es necesario que ademas del usuario ingreses tu clave dinamica.</value>
+  </data>
+  <data name="OpcionInvalida" xml:space="preserve">
+    <value>No es una opción valida</value>
+  </data>
+  <data name="PreguntaUsuario" xml:space="preserve">
+    <value>Para iniciar necesito que por favor digites tu usuario o tu correo institucional</value>
+  </data>
+  <data name="RestablecerClave" xml:space="preserve">
+    <value>¿Deseas restablecer tu clave dinámica?</value>
+  </data>
+  <data name="SaludoInicial" xml:space="preserve">
+    <value>Hola, soy el Asistente Virtual de Seguros Beta. ¿En que puedo ayudarte?</value>
+  </data>
+  <data name="SaludoUsuario" xml:space="preserve">
+    <value>Hola {0}, por favor digita tu clave dinamica</value>
+  </data>
+  <data name="SaludoUsuarioLogeado" xml:space="preserve">
+    <value>{0} {1}. ¿Como puedo ayudarte?</value>
+  </data>
+  <data name="SeRestablecioClave" xml:space="preserve">
+    <value>{0}, generé una nueva clave dinamica y la envie a tu correo, (mail)  para iniciar por favor digita tu clave dinamica.</value>
+  </data>
+  <data name="UsuarioNoEncontrado" xml:space="preserve">
+    <value>Lo siento, pero no puedo encontrar tus datos, por favor inténtalo nuevamente.</value>
+  </data>
+  <data name="SaludoUsuarioNuevo" xml:space="preserve">
+    <value>Como es la primera vez que ingresas se generó una clave dinámica la cual fue enviada a tu correo.</value>
+  </data>
+</root>
