@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       this.alertify.error('Los campos email o password no pueden estar en blanco');
     }
 
-    if (this.model.email === 'administrador' && this.model.password === 'admin'){
+    if (this.model.email === 'administrador' && this.model.password === 'admin') {
       this.router.navigate(['/home']);
     } else {
       this.alertify.error('Datos invalidos');

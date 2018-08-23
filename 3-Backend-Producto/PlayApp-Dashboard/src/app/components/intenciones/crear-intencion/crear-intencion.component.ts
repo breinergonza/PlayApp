@@ -9,8 +9,6 @@ import {
 import { AlertifyService } from '../../../services/alertify.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IntencionService } from '../../../services/intencion.service';
-import { Tarjeta } from '../../../models/tarjeta.interface';
-import { TarjetasService } from '../../../services/tarjetas.service';
 import { DominioService } from '../../../services/dominio.service';
 import { Dominio } from '../../../models/dominio.interface';
 
@@ -23,19 +21,18 @@ export class CrearIntencionComponent implements OnInit {
   @ViewChild('intencionForm') intencionForm: Intencion;
   model: Intencion = {} as Intencion;
   opcionesAux: Opciones;
-  tarjetaAux: Tarjeta;
+  // tarjetaAux: Tarjeta;
   textoAux: String;
   dominios: Dominio[] = [];
   respuestas: Respuestas[] = [];
   desahabilitarAgregar: Boolean = false;
   intenciones: Intencion[] = [];
-  tarjetas: Tarjeta[] = [];
+  // tarjetas: Tarjeta[] = [];
 
   constructor(
     private alertify: AlertifyService,
     private router: Router,
     private intencionService: IntencionService,
-    private tarjetasService: TarjetasService,
     private dominioService: DominioService,
     private activateRoute: ActivatedRoute
   ) {}
@@ -45,12 +42,10 @@ export class CrearIntencionComponent implements OnInit {
     this.model['opciones'] = [];
     this.model['idtarjetas'] = [];
     this.model['textos'] = [];
-    this.model.tiporespuesta = '';
     this.model.dominio = '';
 
     this.activateRoute.data.subscribe(data => {
       console.log(data);
-      this.tarjetas = <Tarjeta[]>data['tarjetas'];
       this.intenciones = <Intencion[]>data['intenciones'];
 
       // console.warn(this.intenciones);
@@ -61,12 +56,6 @@ export class CrearIntencionComponent implements OnInit {
   asignarOpcion(value: Opciones) {
     console.log(value);
     this.opcionesAux = value;
-
-    this.agregarRespuesta(this.model.tiporespuesta);
-  }
-
-  asignarTarjeta(value: Tarjeta) {
-    this.tarjetaAux = value;
   }
 
   agregarRespuesta(tiporespuesta: String) {
@@ -75,8 +64,6 @@ export class CrearIntencionComponent implements OnInit {
         const resAux: Textos = {
           texto: this.textoAux
         } as Textos;
-        this.model.textos.push(resAux);
-
         this.agregarRespuestas({
           id: '',
           texto: resAux.texto,
@@ -84,17 +71,8 @@ export class CrearIntencionComponent implements OnInit {
         } as Respuestas);
         this.textoAux = '';
         break;
-      case 'Tarjeta':
-        this.model.idtarjetas.push(this.tarjetaAux._id.toString());
-        this.agregarRespuestas({
-          id: this.tarjetaAux._id,
-          texto: this.tarjetaAux.titulo,
-          tiporespuesta
-        } as Respuestas);
-        break;
       case 'ConOpciones':
       if (this.opcionesAux.idintencion) {
-        this.model.opciones.push(this.opcionesAux);
         this.agregarRespuestas({
           id: this.opcionesAux.idintencion,
           texto: this.opcionesAux.texto,
@@ -104,7 +82,6 @@ export class CrearIntencionComponent implements OnInit {
         const resAux2: Textos = {
           texto: this.opcionesAux.texto
         } as Textos;
-        this.model.textos.push(resAux2);
         this.desahabilitarAgregar = true;
         this.textoAux = '';
       }
@@ -130,6 +107,8 @@ export class CrearIntencionComponent implements OnInit {
         this.alertify.success('Se ha guardado intención corretamente');
       },
       err => {
+        // tslint:disable-next-line:no-debugger
+        debugger;
         this.alertify.error(err);
       },
       () => {
@@ -153,13 +132,13 @@ export class CrearIntencionComponent implements OnInit {
 
         switch (res.tiporespuesta) {
           case 'Basica':
-            this.model.textos.splice(i, 1);
+            // this.model.textos.splice(i, 1);
             break;
           case 'Tarjeta':
-            this.model.idtarjetas.splice(i, 1);
+            // this.model.idtarjetas.splice(i, 1);
             break;
           case 'ConOpciones':
-            this.model.opciones.splice(i, 1);
+            // this.model.opciones.splice(i, 1);
             break;
         }
       }

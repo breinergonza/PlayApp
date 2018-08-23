@@ -20,16 +20,10 @@ import { HomeComponent } from './components/home/home.component';
 import { CrearIntencionComponent } from './components/intenciones/crear-intencion/crear-intencion.component';
 import { OpcionesComponent } from './components/intenciones/crear-intencion/Opciones/Opciones.component';
 import { PreguntasComponent } from './components/intenciones/crear-intencion/preguntas/preguntas.component';
-import { TarjetasRespuestaComponent } from './components/intenciones/crear-intencion/tarjetas-respuesta/tarjetas-respuesta.component';
 import { EditarIntencionComponent } from './components/intenciones/editar-intencion/editar-intencion.component';
 import { IntencionesComponent } from './components/intenciones/intenciones.component';
 import { NavComponent } from './components/nav/nav.component';
 import { StorageComponent } from './components/storage/storage.component';
-import { TarjetaBasicaComponent } from './components/tarjeta-basica/tarjeta-basica.component';
-import { TarjetasAudioComponent } from './components/tarjetas-audio/tarjetas-audio.component';
-import { TarjetasListComponent } from './components/tarjetas-list/tarjetas-list.component';
-import { TarjetasVideoComponent } from './components/tarjetas-video/tarjetas-video.component';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { CrearUsuarioComponent } from './components/usuario/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './components/usuario/editar-usuario/editar-usuario.component';
@@ -45,10 +39,8 @@ import { AlertifyService } from './services/alertify.service';
 import { DominioService } from './services/dominio.service';
 import { FirebaseService } from './services/firebase.service';
 import { IntencionService } from './services/intencion.service';
-import { TarjetasService } from './services/tarjetas.service';
 import { UploadFileService } from './services/upload-file.service';
 import { UsuarioService } from './services/usuario.service';
-import { TarjetaResolve } from './resolvers/tarjeta.resolve';
 import { LoginComponent } from './login/login.component';
 
 // import { IntencionComponent } from './components/intencion/intencion.component';
@@ -68,15 +60,9 @@ import { LoginComponent } from './login/login.component';
     EditarDominioComponent,
     CrearIntencionComponent,
     PreguntasComponent,
-    TarjetasComponent,
     OpcionesComponent,
-    TarjetasRespuestaComponent,
     EditarIntencionComponent,
-    TarjetaBasicaComponent,
-    TarjetasAudioComponent,
-    TarjetasVideoComponent,
     UploadFileComponent,
-    TarjetasListComponent,
     LoginComponent
   ],
   imports: [
@@ -97,14 +83,12 @@ import { LoginComponent } from './login/login.component';
     EditarUsuarioResolve,
     UsuarioResolve,
     DominioService,
-    TarjetasService,
     IntencionService,
     EditarDominioResolve,
     DominioResolve,
     IntencionResolve,
     UploadFileService,
-    FirebaseService,
-    TarjetaResolve
+    FirebaseService
   ],
   bootstrap: [AppComponent]
 })

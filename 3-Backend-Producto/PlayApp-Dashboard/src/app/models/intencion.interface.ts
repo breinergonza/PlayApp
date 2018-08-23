@@ -3,16 +3,12 @@ export interface Intencion {
   idluis: String;
   dominio: String;
   intencion: String;
-  tiporespuesta: String;
   preguntas: Preguntas[];
-  idtarjetas?: String[];
-  opciones?: Opciones[];
-  textos: Textos[];
 }
 
 export interface Preguntas {
-  idluis: String;
   texto: String;
+  esCorrecta: Boolean;
 }
 
 // Ejemplo de Paises , Ciudades,

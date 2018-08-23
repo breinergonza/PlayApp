@@ -79,7 +79,7 @@ namespace Api.Controllers
 
                 if (validarIntencion != null)
                 {
-                    return BadRequest($"Ya existe una pregunta con el nombre '{intencion.intencion}' .");
+                    return BadRequest($"Ya existe una posible respuesta con el enunciado '{intencion.intencion}' .");
                 }
                 
                 //Se insertan los datos en BD

@@ -5,14 +5,13 @@
 
     <div class="container">
         <br>
-        <h3>Pregunta
-            <small>{{model.intencion | titlecase }}</small>
+        <h3>Asociar pregunta [ <small>{{model.intencion | titlecase }}</small> ] al formulario
         </h3>
 
         <div class="row">
             <div class="col-12 col-md-6 ">
                 <div class="form-group">
-                    <label for="dominio">Formulario</label>
+                    <label for="dominio">Formulario a asociar:</label>
                     <select name="dominio" [(ngModel)]="model.dominio" aria-describedby="dominoHelp" aria-placeholder="Formulario" class="custom-select" id="sexo">
             <option value="" selected>
               <small>Seleccione ...</small>
@@ -27,7 +26,7 @@
 
             <div class="col-12 col-md-6 ">
                 <div class="form-group">
-                    <label for="intencion">Pregunta</label>
+                    <label for="intencion">Enunciado o pregunta a agregar:</label>
                     <input type="text" name="intencion" [(ngModel)]="model.intencion" required class="form-control" aria-describedby="intencionHelp" placeholder="Ingrese Pregunta">
                     <small id="intencionHelp" class="form-text text-muted">Recuerda que el nombre de la pregunta debe ser único</small>
                 </div>
@@ -35,7 +34,7 @@
         </div>
 
         <hr>
-        <h4>Preguntas</h4>
+        <h4>Agregue posibles respuestas:</h4>
         <br>
         <div class="row">
             <div class="col-12">

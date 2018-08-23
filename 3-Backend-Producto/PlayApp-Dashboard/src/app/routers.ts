@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { StorageComponent } from './components/storage/storage.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { IntencionesComponent } from './components/intenciones/intenciones.component';
 import { CrearUsuarioComponent } from './components/usuario/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './components/usuario/editar-usuario/editar-usuario.component';
@@ -16,8 +15,6 @@ import { EditarDominioResolve } from './resolvers/editar-dominio.resolve';
 import { CrearIntencionComponent } from './components/intenciones/crear-intencion/crear-intencion.component';
 import { IntencionResolve } from './resolvers/intencion.resolve';
 import { EditarIntencionComponent } from './components/intenciones/editar-intencion/editar-intencion.component';
-import { TarjetasListComponent } from './components/tarjetas-list/tarjetas-list.component';
-import { TarjetaResolve } from './resolvers/tarjeta.resolve';
 import { LoginComponent } from './login/login.component';
 
 export const appRouter: Routes = [
@@ -27,15 +24,6 @@ export const appRouter: Routes = [
     path: 'usuario',
     component: UsuarioComponent,
     resolve: { usuarios: UsuarioResolve }
-  },
-  {
-    path: 'tarjeta',
-    component: TarjetasListComponent,
-    resolve: { tarjeta: TarjetaResolve }
-  },
-  {
-    path: 'tarjeta-nueva',
-    component: TarjetasComponent
   },
   {
     path: 'dominio',
@@ -72,8 +60,7 @@ export const appRouter: Routes = [
     component: CrearIntencionComponent,
     resolve: {
       dominios: DominioResolve,
-      intenciones: IntencionResolve,
-      tarjetas: TarjetaResolve
+      intenciones: IntencionResolve
     }
   },
   { path: 'login', component: LoginComponent },
