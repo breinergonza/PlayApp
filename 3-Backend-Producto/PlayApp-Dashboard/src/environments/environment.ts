@@ -5,7 +5,7 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:3978/api',
+  apiUrl: 'https://play-app-juguemonosla.azurewebsites.net/api',
   firebase: {
     apiKey: 'AIzaSyDXNT_NZ3zXGCqT6KHIsHtM7hsZPKlvacE',
     authDomain: 'playapp-419eb.firebaseapp.com',
