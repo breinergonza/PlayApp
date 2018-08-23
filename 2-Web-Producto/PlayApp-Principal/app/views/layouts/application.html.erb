@@ -19,12 +19,10 @@
  
     <%= render 'layouts/navigation' %>
     
-     <%= yield %>
-    
-    <!-- Footer Partials -->
+    <%= yield %>
+  
     <%= render 'layouts/footer' %>
 
-    <!-- Javascripts -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
