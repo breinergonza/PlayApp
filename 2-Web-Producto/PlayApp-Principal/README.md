@@ -1,5 +1,5 @@
 ## Pagina principal del aplicativo PlayApp - Juguemonosla con respeto
-![PlayApp](https://firebasestorage.googleapis.com/v0/b/playapp-419eb.appspot.com/o/paginaPrincipal.png?alt=media&token=acffd5f4-cb10-4be0-a055-9b3a50505e04)
+![PlayApp - Ver](https://firebasestorage.googleapis.com/v0/b/playapp-419eb.appspot.com/o/paginaPrincipal.png?alt=media&token=acffd5f4-cb10-4be0-a055-9b3a50505e04)
 
 
 # [PlayApp](https://play-app-juguemos.herokuapp.com/)
